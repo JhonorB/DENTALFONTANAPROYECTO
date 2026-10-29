@@ -399,26 +399,6 @@ ul, ol {
   gap: 1.25rem;
 }
 
-/* Selector de bandera UK */
-.header-lang-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform var(--transition-fast);
-}
-
-.header-lang-btn:hover {
-  transform: scale(1.1);
-}
-
-.header-lang-flag {
-  width: 22px;
-  height: 15px;
-  border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  display: block;
-}
-
 /* Menú Desktop */
 .site-nav {
   display: flex;
