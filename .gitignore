@@ -1,0 +1,10 @@
+# Dependencias y archivos temporales del sistema
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

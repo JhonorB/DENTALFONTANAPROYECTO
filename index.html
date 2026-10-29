@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="perudental - Especialistas en diseño de Sonrisas con la tecnología más avanzada. Blanqueamiento dental, carillas, contorneado estético, implantes dentales, coronas CAD/CAM 3D. Sede C.C. La Fontana, 3er Piso Of. 301, Camacho, La Molina.">
+  <meta name="theme-color" content="#452B50">
+  <title>PeruDental | Especialistas en Diseño de Sonrisas y Odontología Avanzada</title>
+
+  <!-- Preload de imagen principal del doctor para optimizar LCP -->
+  <link rel="preload" as="image" href="assets/bannerHome.jpg">
+
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Enlace accesible de salto al contenido -->
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+  <!-- ========================================================= -->
+  <!-- BARRA DE INFORMACIÓN SUPERIOR (Top Bar Desktop)           -->
+  <!-- ========================================================= -->
+  <aside class="top-bar" aria-label="Información rápida de la clínica dental">
+    <div class="container top-bar__inner">
+      <div class="top-bar__item">
+        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Horario de Citas: Lun - Vie: 09:00 a 20:00 | Sáb: 09:00 a 18:00</span>
+      </div>
+      <div class="top-bar__actions">
+        <a href="#contacto" class="top-bar__link">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>Av. Javier Prado Este N° 5250, 3er Piso Of. 301 (C.C. La Fontana), Camacho</span>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=51995081111&text=Hola,%20deseo%20separar%20una%20cita%20en%20PeruDental" 
+           class="top-bar__link top-bar__link--whatsapp" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           aria-label="Atención rápida vía WhatsApp al 995081111">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.52 3.48A11.93 11.93 0 0012.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.16 1.6 5.98L0 24l6.23-1.63a11.89 11.89 0 005.83 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.21-3.52-8.43zM12.06 21.87h-.01c-1.8 0-3.57-.49-5.11-1.41l-.37-.22-3.79.99 1.01-3.69-.24-.38a9.92 9.92 0 01-1.52-5.19c0-5.5 4.48-9.98 9.99-9.98 2.67 0 5.18 1.04 7.07 2.93 1.89 1.89 2.93 4.4 2.93 7.06 0 5.5-4.48 9.98-9.97 9.98zm5.47-7.48c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.25-.24-.59-.49-.51-.68-.52h-.58c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.31.18-1.43-.08-.12-.27-.2-.57-.35z"/>
+          </svg>
+          <span>WhatsApp: 995081111</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================= -->
+  <!-- NAVEGACIÓN PRINCIPAL (Header Móvil y Desktop)             -->
+  <!-- Conforme a la referencia visual: Fondo Ciruela Oscuro     -->
+  <!-- ========================================================= -->
+  <header class="site-header" id="cabecera">
+    <div class="container site-header__inner">
+      
+      <!-- Logotipo Oficial perudental -->
+      <a href="#inicio" class="site-brand" aria-label="Ir al inicio de PeruDental">
+        <img src="assets/perudental-logo.png" 
+             alt="perudental" 
+             class="site-brand__img" 
+             width="180" 
+             height="34">
+      </a>
+
+      <!-- Controles a la derecha (Bandera UK + Menú Móvil / Desktop) -->
+      <div class="header-right-group">
+        
+        <!-- Selector de idioma con bandera de Reino Unido (como en referencia) -->
+        <a href="#contacto" class="header-lang-btn" aria-label="Cambiar idioma a Inglés (English version)">
+          <img src="assets/ingles.png" alt="English flag" class="header-lang-flag" width="22" height="15">
+        </a>
+
+        <!-- Botón de Menú Móvil (3 barras blancas) -->
+        <button type="button" 
+                class="nav-toggle" 
+                id="nav-toggle" 
+                aria-expanded="false" 
+                aria-controls="menu-navegacion" 
+                aria-label="Abrir menú de navegación">
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+          <span class="nav-toggle__bar" aria-hidden="true"></span>
+        </button>
+
+        <!-- Menú de Enlaces Desktop -->
+        <nav class="site-nav" id="menu-navegacion" aria-label="Navegación principal">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#inicio" class="nav-link nav-link--active">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="#servicios" class="nav-link">Especialidades</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sede-lafontana" class="nav-link">Sede La Fontana</a>
+            </li>
+            <li class="nav-item">
+              <a href="#instalaciones" class="nav-link">Tecnología CAD/CAM</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contacto" class="nav-link">Citas y Contacto</a>
+            </li>
+          </ul>
+
+          <div class="nav-cta">
+            <a href="https://api.whatsapp.com/send?phone=51995081111&text=Hola,%20deseo%20separar%20mi%20cita%20en%20PeruDental" 
+               class="btn btn--brand-green btn--sm" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              <span>Pide tu Cita</span>
+            </a>
+          </div>
+        </nav>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Overlay para cerrar el menú móvil al tocar fuera -->
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+  <!-- ========================================================= -->
+  <!-- CONTENIDO PRINCIPAL                                       -->
+  <!-- ========================================================= -->
+  <main id="contenido-principal">
+
+    <!-- ======================================================= -->
+    <!-- SECCIÓN 1: HERO PRINCIPAL (Fiel a la captura móvil)     -->
+    <!-- Imagen del odontólogo con lupas y lámpara superior      -->
+    <!-- ======================================================= -->
+    <section class="hero-perudental" id="inicio" aria-labelledby="hero-title">
+      
+      <!-- Imagen de fondo completa del doctor -->
+      <div class="hero-perudental__bg" aria-hidden="true">
+        <img src="assets/bannerHome.jpg" 
+             alt="Doctor especialista en odontología estética con lupas de aumento y lámpara clínica" 
+             class="hero-perudental__bg-img"
+             width="1600"
+             height="1033"
+             loading="eager"
+             decoding="async">
+      </div>
+
+      <!-- Contenedor del contenido superpuesto -->
+      <div class="container hero-perudental__container">
+        
+        <div class="hero-perudental__box">
+          
+          <!-- Titular Principal Exacto -->
+          <h1 id="hero-title" class="hero-perudental__title">
+            Especialistas en diseño de Sonrisas con la tecnología más avanzada
+          </h1>
+
+          <!-- Enlaces / Subtítulo con subrayado exacto -->
+          <div class="hero-perudental__subtitle-links">
+            <a href="#servicios">Blanqueamiento dental</a>, 
+            <a href="#servicios">carillas</a>, 
+            <a href="#servicios">contorneado estético</a>, 
+            <a href="#servicios">implantes dentales</a>, 
+            <a href="#servicios">coronas CAD/CAM 3D</a>
+          </div>
+
+          <!-- Indicador flotante WhatsApp "Separa tu cita con nosotros" -->
+          <div class="hero-perudental__whatsapp-callout">
+            <a href="https://api.whatsapp.com/send?phone=51995081111&text=Hola,%20deseo%20separar%20mi%20cita%20en%20PeruDental" 
+               class="whatsapp-pill-badge" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               aria-label="Separa tu cita con nosotros por WhatsApp">
+              <img src="assets/icon-us.png" 
+                   alt="Separa tu cita con nosotros vía WhatsApp" 
+                   class="whatsapp-pill-badge__img"
+                   width="210"
+                   height="58">
+            </a>
+          </div>
+
+          <!-- Botones de Acción Paralelos: [Contáctanos] [995081111] -->
+          <div class="hero-perudental__actions">
+            <a href="#contacto" class="btn-pill btn-pill--cyan">
+              Contáctanos
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=51995081111&text=Hola,%20deseo%20informaci%C3%B3n" 
+               class="btn-pill btn-pill--green" 
+               target="_blank" 
+               rel="noopener noreferrer">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.52 3.48A11.93 11.93 0 0012.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.16 1.6 5.98L0 24l6.23-1.63a11.89 11.89 0 005.83 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.21-3.52-8.43zM12.06 21.87h-.01c-1.8 0-3.57-.49-5.11-1.41l-.37-.22-3.79.99 1.01-3.69-.24-.38a9.92 9.92 0 01-1.52-5.19c0-5.5 4.48-9.98 9.99-9.98 2.67 0 5.18 1.04 7.07 2.93 1.89 1.89 2.93 4.4 2.93 7.06 0 5.5-4.48 9.98-9.97 9.98zm5.47-7.48c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.25-.24-.59-.49-.51-.68-.52h-.58c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.31.18-1.43-.08-.12-.27-.2-.57-.35z"/>
+              </svg>
+              <span>995081111</span>
+            </a>
+          </div>
+
+          <!-- Pestaña inferior: Gestionar consentimiento (fiel a captura) -->
+          <div class="consent-pill-tab" id="btn-consent">
+            <span>Gestionar consentimiento</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- BANDA RESUMEN DE SEDE Y DIFERENCIALES                   -->
+    <!-- ======================================================= -->
+    <section class="stats-strip" aria-label="Sede y diferenciales">
+      <div class="container stats-strip__grid">
+        <div class="stat-box reveal-item">
+          <span class="stat-box__number">CEREC 3D</span>
+          <span class="stat-box__label">Coronas en una sola sesión</span>
+        </div>
+        <div class="stat-box reveal-item">
+          <span class="stat-box__number">Piso 3</span>
+          <span class="stat-box__label">Oficina 301 (C.C. La Fontana)</span>
+        </div>
+        <div class="stat-box reveal-item">
+          <span class="stat-box__number">+15 Años</span>
+          <span class="stat-box__label">Especialistas Certificados</span>
+        </div>
+        <div class="stat-box reveal-item">
+          <span class="stat-box__number">100%</span>
+          <span class="stat-box__label">Bioseguridad y Anestesia Suave</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECCIÓN 2: ESPECIALIDADES DENTALES AVANZADAS            -->
+    <!-- ======================================================= -->
+    <section class="services-section section-padding" id="servicios" aria-labelledby="services-title">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-item">
+          <div class="badge badge--primary">Tratamientos Digitales</div>
+          <h2 id="services-title" class="section-title">Especialidades Odontológicas de Alta Precisión</h2>
+          <p class="section-subtitle">
+            Tecnología CAD/CAM, tomografía computarizada 3D y materiales estéticos de última generación en Lima.
+          </p>
+        </div>
+
+        <!-- Filtros interactivos -->
+        <div class="services-filter reveal-item" role="toolbar" aria-label="Filtrar especialidades dentales">
+          <button type="button" class="filter-btn filter-btn--active" data-filter="all">Todas</button>
+          <button type="button" class="filter-btn" data-filter="estetica">Diseño de Sonrisa</button>
+          <button type="button" class="filter-btn" data-filter="ortodoncia">Ortodoncia</button>
+          <button type="button" class="filter-btn" data-filter="implantes">Implantes</button>
+          <button type="button" class="filter-btn" data-filter="rehabilitacion">Coronas CAD/CAM</button>
+        </div>
+
+        <!-- Rejilla de Especialidades -->
+        <div class="services-grid" id="services-grid">
+
+          <!-- Tarjeta 1: Diseño de Sonrisa y Blanqueamiento -->
+          <article class="service-card reveal-item" data-category="estetica">
+            <div class="service-card__media">
+              <img src="assets/dental-estetica.jpg" 
+                   alt="Diseño de sonrisa y carillas dentales de alta estética" 
+                   class="service-card__img" 
+                   width="800" 
+                   height="533" 
+                   loading="lazy">
+              <span class="provisional-pill">
+                <span class="provisional-pill__icon">✦</span> Plan Digital
+              </span>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__meta">
+                <span class="category-tag category-tag--estetica">Estética Dental</span>
+                <span class="location-badge">Oficina 301</span>
+              </div>
+              <h3 class="service-card__title">Diseño de Sonrisa y Blanqueamiento</h3>
+              <p class="service-card__text">
+                Carillas de porcelana ultrafinas sin desgaste invasivo, blanqueamiento dental láser y 
+                contorneado estético para lograr proporciones faciales armónicas y naturales.
+              </p>
+              <div class="service-card__status-box">
+                <span class="status-indicator status-indicator--pending"></span>
+                <span class="status-text">Simulación digital previa antes de iniciar el tratamiento</span>
+              </div>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__detail">Material: Porcelana E.max / Disilicato</span>
+              <a href="#contacto" class="service-card__link">Consultar &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2: Ortodoncia y Alineadores Invisibles -->
+          <article class="service-card reveal-item" data-category="ortodoncia">
+            <div class="service-card__media">
+              <img src="assets/dental-ortodoncia.jpg" 
+                   alt="Alineadores invisibles y ortodoncia digital" 
+                   class="service-card__img" 
+                   width="800" 
+                   height="533" 
+                   loading="lazy">
+              <span class="provisional-pill">
+                <span class="provisional-pill__icon">✦</span> Sin Metales
+              </span>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__meta">
+                <span class="category-tag category-tag--ortodoncia">Ortodoncia</span>
+                <span class="location-badge">Oficina 301</span>
+              </div>
+              <h3 class="service-card__title">Ortodoncia Invisible y Brackets Estéticos</h3>
+              <p class="service-card__text">
+                Alineación dental mediante férulas transparentes removibles, cómodas e imperceptibles. 
+                También contamos con brackets estéticos de zafiro y autoligado para resultados rápidos.
+              </p>
+              <div class="service-card__status-box">
+                <span class="status-indicator status-indicator--pending"></span>
+                <span class="status-text">Escaneo intraoral 3D sin incómodas pastas</span>
+              </div>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__detail">Adultos y Jóvenes</span>
+              <a href="#contacto" class="service-card__link">Consultar &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3: Implantes Dentales y Cirugía -->
+          <article class="service-card reveal-item" data-category="implantes">
+            <div class="service-card__media">
+              <img src="assets/dental-implantes.jpg" 
+                   alt="Implantes dentales de titanio y cirugía guiada" 
+                   class="service-card__img" 
+                   width="800" 
+                   height="533" 
+                   loading="lazy">
+              <span class="provisional-pill">
+                <span class="provisional-pill__icon">✦</span> Cirugía Guiada
+              </span>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__meta">
+                <span class="category-tag category-tag--implantes">Implantología</span>
+                <span class="location-badge">Quirófano Menor</span>
+              </div>
+              <h3 class="service-card__title">Implantes Dentales e Injertos Óseos</h3>
+              <p class="service-card__text">
+                Reposición definitiva de dientes ausentes con fijaciones de titanio de marcas líderes mundiales. 
+                Cirugía mínimamente invasiva guiada por ordenador con recuperación acelerada.
+              </p>
+              <div class="service-card__status-box">
+                <span class="status-indicator status-indicator--pending"></span>
+                <span class="status-text">Diagnóstico tomográfico tridimensional de alta precisión</span>
+              </div>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__detail">Garantía clínica certificada</span>
+              <a href="#contacto" class="service-card__link">Consultar &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 4: Coronas CAD/CAM 3D CEREC -->
+          <article class="service-card reveal-item" data-category="rehabilitacion">
+            <div class="service-card__media">
+              <img src="assets/dental-hero.jpg" 
+                   alt="Tecnología CAD/CAM CEREC para coronas en un solo día" 
+                   class="service-card__img" 
+                   width="800" 
+                   height="533" 
+                   loading="lazy">
+              <span class="provisional-pill">
+                <span class="provisional-pill__icon">✦</span> En 1 Sola Sesión
+              </span>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__meta">
+                <span class="category-tag category-tag--rehabilitacion">Coronas CAD/CAM</span>
+                <span class="location-badge">Robótica Dental</span>
+              </div>
+              <h3 class="service-card__title">Coronas y Prótesis en un Solo Día</h3>
+              <p class="service-card__text">
+                Fresado computarizado de coronas de zirconio y cerámica pura en cuestión de horas. 
+                Sin moldes de plástico ni coronas temporales que se caen: precisión milimétrica inmediata.
+              </p>
+              <div class="service-card__status-box">
+                <span class="status-indicator status-indicator--pending"></span>
+                <span class="status-text">Tecnología alemana CEREC de última generación</span>
+              </div>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__detail">Sin esperas de laboratorio</span>
+              <a href="#contacto" class="service-card__link">Consultar &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 5: Endodoncia Mecanizada -->
+          <article class="service-card reveal-item" data-category="rehabilitacion">
+            <div class="service-card__media">
+              <img src="assets/dental-endodoncia.jpg" 
+                   alt="Tratamiento de conductos endodoncia sin dolor" 
+                   class="service-card__img" 
+                   width="800" 
+                   height="533" 
+                   loading="lazy">
+              <span class="provisional-pill">
+                <span class="provisional-pill__icon">✦</span> Alivio Inmediato
+              </span>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__meta">
+                <span class="category-tag category-tag--rehabilitacion">Endodoncia</span>
+                <span class="location-badge">Box Clínico</span>
+              </div>
+              <h3 class="service-card__title">Endodoncia y Alivio del Dolor Dental</h3>
+              <p class="service-card__text">
+                Tratamiento de conductos radiculares mecanizado con instrumentación rotatoria. 
+                Eliminamos la infección preservando tu propio diente natural sin molestias ni dolor.
+              </p>
+              <div class="service-card__status-box">
+                <span class="status-indicator status-indicator--pending"></span>
+                <span class="status-text">Atención de urgencia dental previa coordinación</span>
+              </div>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__detail">Anestesia electrónica localizada</span>
+              <a href="#contacto" class="service-card__link">Consultar &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 6: Profilaxis Ultrasónica -->
+          <article class="service-card reveal-item" data-category="rehabilitacion">
+            <div class="service-card__media">
+              <img src="assets/dental-limpieza.jpg" 
+                   alt="Limpieza dental profunda con ultrasonido y profilaxis" 
+                   class="service-card__img" 
+                   width="800" 
+                   height="533" 
+                   loading="lazy">
+              <span class="provisional-pill">
+                <span class="provisional-pill__icon">✦</span> Preventiva
+              </span>
+            </div>
+            <div class="service-card__body">
+              <div class="service-card__meta">
+                <span class="category-tag category-tag--prevencion">Higiene y Encías</span>
+                <span class="location-badge">Prevención</span>
+              </div>
+              <h3 class="service-card__title">Profilaxis Ultrasónica y Periodoncia</h3>
+              <p class="service-card__text">
+                Destartraje con ultrasonido que retira cálculo dental y manchas de café o tabaco sin dañar el esmalte, 
+                complementado con pulido fino y tratamiento de salud gingival.
+              </p>
+              <div class="service-card__status-box">
+                <span class="status-indicator" style="background-color: var(--color-brand-green);"></span>
+                <span class="status-text">Recomendada cada 6 meses para prevenir caries y sangrado</span>
+              </div>
+            </div>
+            <div class="service-card__footer">
+              <span class="service-card__detail">Sesión de 45 minutos</span>
+              <a href="#contacto" class="service-card__link">Consultar &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECCIÓN SEDE: C.C. LA FONTANA (Camacho, La Molina)       -->
+    <!-- Cumple con conservar proporciones sin recortes         -->
+    <!-- ======================================================= -->
+    <section class="sedes-section section-padding" id="sede-lafontana" aria-labelledby="sede-title">
+      <div class="container">
+        
+        <div class="sede-layout">
+          
+          <div class="sede-info reveal-item">
+            <div class="badge badge--primary">Nuestra Sede en Camacho</div>
+            <h2 id="sede-title" class="section-title">Centro Comercial La Fontana</h2>
+            <p class="sede-address-highlight">
+              <strong>Av. Javier Prado Este N° 5250, Tercer Piso Oficina 301</strong><br>
+              Urbanización Camacho, La Molina • Lima, Perú
+            </p>
+            <p class="sede-desc">
+              Un entorno corporativo y seguro con amplios accesos desde la Av. Javier Prado, 
+              estacionamiento techado y vigilancia permanente. Nuestro consultorio en la Oficina 301 
+              cuenta con ascensor directo, sala de espera climatizada y gabinetes odontológicos privados.
+            </p>
+
+            <ul class="sede-features-list">
+              <li>
+                <svg class="icon icon-sm text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Frente a Camacho / Trébol de Javier Prado con fácil parqueo</span>
+              </li>
+              <li>
+                <svg class="icon icon-sm text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Tercer Piso (Oficina 301) con accesibilidad universal</span>
+              </li>
+              <li>
+                <svg class="icon icon-sm text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Cochera privada dentro del centro comercial</span>
+              </li>
+            </ul>
+
+            <div class="sede-actions">
+              <a href="#contacto" class="btn btn--primary">
+                <span>Agendar Cita en Oficina 301</span>
+              </a>
+              <button type="button" class="btn btn--secondary" id="btn-ver-edificio-sede">
+                <span>Ver Edificio Completo</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Fotografía del edificio conservando sus proporciones exactas -->
+          <div class="sede-media reveal-item">
+            <figure class="hero-showcase">
+              <div class="hero-showcase__frame">
+                <img src="assets/edificio-principal.jpg" 
+                     alt="Fachada del Centro Comercial La Fontana en Av. Javier Prado Este 5250" 
+                     class="hero-showcase__img"
+                     width="1600"
+                     height="1067"
+                     loading="lazy">
+                <div class="hero-showcase__overlay-tag" aria-hidden="true">
+                  <span>Edificio C.C. La Fontana</span>
+                </div>
+              </div>
+              <figcaption class="hero-showcase__caption">
+                <div class="caption-content">
+                  <strong>Sede Camacho: C.C. La Fontana</strong>
+                  <p>Av. Javier Prado Este N° 5250, Piso 3 Of. 301</p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Modal accesible de fotografía completa -->
+    <div class="photo-modal" id="photo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-photo-title" hidden>
+      <div class="photo-modal__backdrop" id="photo-modal-backdrop"></div>
+      <div class="photo-modal__container">
+        <div class="photo-modal__header">
+          <h2 id="modal-photo-title" class="photo-modal__title">Centro Comercial La Fontana - Edificio Central</h2>
+          <button type="button" class="photo-modal__close" id="photo-modal-close" aria-label="Cerrar vista de fotografía">&times;</button>
+        </div>
+        <div class="photo-modal__body">
+          <img src="assets/edificio-principal.jpg" 
+               alt="Fachada arquitectónica completa del Centro Comercial La Fontana" 
+               class="photo-modal__img">
+        </div>
+        <div class="photo-modal__footer">
+          <span>Av. Javier Prado Este N° 5250, Tercer Piso Oficina 301, Camacho, La Molina</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================= -->
+    <!-- SECCIÓN 3: CITAS, CONTACTO Y FORMULARIO                 -->
+    <!-- ======================================================= -->
+    <section class="contact-section section-padding" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        
+        <div class="section-header text-center reveal-item">
+          <div class="badge badge--primary">Atención y Reservas</div>
+          <h2 id="contact-title" class="section-title">Separa tu Cita con Nosotros</h2>
+          <p class="section-subtitle">
+            Comunícate por WhatsApp al <strong>995081111</strong> o completa el formulario para coordinar tu horario.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+
+          <!-- COLUMNA 1: Datos de Contacto y Horarios -->
+          <div class="contact-info-panel reveal-item">
+            <div class="panel-card">
+              <h3 class="panel-card__title">Información de Consultorio</h3>
+              <p class="panel-card__desc">
+                Atención personalizada con cita previa en nuestras instalaciones de Camacho, La Molina.
+              </p>
+
+              <ul class="contact-details-list">
+                
+                <!-- Dirección Oficial -->
+                <li class="contact-detail-item">
+                  <div class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <span class="contact-label">Dirección Principal</span>
+                    <address class="contact-value not-italic">
+                      <strong>Av. Javier Prado Este N° 5250, Tercer Piso, Oficina 301</strong><br>
+                      Urbanización Camacho, La Molina • Lima, Perú<br>
+                      <span style="color: var(--color-brand-purple); font-weight: 700;">Centro Comercial La Fontana</span>
+                    </address>
+                  </div>
+                </li>
+
+                <!-- Teléfonos y WhatsApp -->
+                <li class="contact-detail-item">
+                  <div class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <span class="contact-label">WhatsApp y Teléfono Oficial</span>
+                    <div class="contact-links">
+                      <a href="https://api.whatsapp.com/send?phone=51995081111" class="contact-link" target="_blank" rel="noopener noreferrer"><strong>WhatsApp: 995 081 111</strong></a> • 
+                      <a href="tel:+5114567890" class="contact-link">Central: (01) 456-7890</a>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Correo Electrónico -->
+                <li class="contact-detail-item">
+                  <div class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <span class="contact-label">Correo Electrónico</span>
+                    <a href="mailto:contacto@perudental.com" class="contact-link">
+                      contacto@perudental.com
+                    </a>
+                  </div>
+                </li>
+
+                <!-- Horarios de Atención -->
+                <li class="contact-detail-item">
+                  <div class="contact-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div class="contact-text">
+                    <span class="contact-label">Horarios de Atención Clínica</span>
+                    <ul class="schedule-list">
+                      <li><strong>Lunes a Viernes:</strong> 09:00 a 20:00 hrs</li>
+                      <li><strong>Sábados:</strong> 09:00 a 18:00 hrs</li>
+                      <li><strong>Urgencias:</strong> Coordinación directa por WhatsApp 995081111</li>
+                    </ul>
+                  </div>
+                </li>
+
+              </ul>
+
+              <!-- Bloque Destacado WhatsApp -->
+              <div class="whatsapp-cta-box whatsapp-cta-box--brand">
+                <div class="whatsapp-cta-box__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.52 3.48A11.93 11.93 0 0012.06 0C5.46 0 .09 5.37.09 11.97c0 2.11.55 4.16 1.6 5.98L0 24l6.23-1.63a11.89 11.89 0 005.83 1.51h.01c6.6 0 11.97-5.37 11.97-11.97 0-3.2-1.25-6.21-3.52-8.43zM12.06 21.87h-.01c-1.8 0-3.57-.49-5.11-1.41l-.37-.22-3.79.99 1.01-3.69-.24-.38a9.92 9.92 0 01-1.52-5.19c0-5.5 4.48-9.98 9.99-9.98 2.67 0 5.18 1.04 7.07 2.93 1.89 1.89 2.93 4.4 2.93 7.06 0 5.5-4.48 9.98-9.97 9.98zm5.47-7.48c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.36.22-.66.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.79-1.68-2.09-.18-.3-.02-.46.13-.61.13-.13.3-.34.45-.51.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.08-.15-.68-1.64-.93-2.25-.24-.59-.49-.51-.68-.52h-.58c-.2 0-.52.08-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.31.18-1.43-.08-.12-.27-.2-.57-.35z"/>
+                  </svg>
+                </div>
+                <div class="whatsapp-cta-box__content">
+                  <strong class="whatsapp-cta-box__title">Respuesta Inmediata por WhatsApp</strong>
+                  <p class="whatsapp-cta-box__desc">Escríbenos directamente para agendar citas, consultar tarifas o resolver dudas con el equipo.</p>
+                  <a href="https://api.whatsapp.com/send?phone=51995081111&text=Hola,%20deseo%20separar%20mi%20cita%20en%20PeruDental" 
+                     class="btn btn--whatsapp" 
+                     target="_blank" 
+                     rel="noopener noreferrer">
+                    <span>Escribir al 995 081 111</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Mapa de Ubicación -->
+              <div class="contact-map-wrapper" style="margin-top: 1.75rem;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem;">
+                  <span class="contact-label" style="margin-bottom: 0;">Ubicación: Camacho - La Molina</span>
+                  <a href="https://maps.google.com/?q=Av.+Javier+Prado+Este+5250,+Camacho,+La+Molina,+Lima" 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     class="contact-link" 
+                     style="font-size: 0.8rem; font-weight: 700;">
+                    Abrir en Google Maps &nearr;
+                  </a>
+                </div>
+                <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1.5px solid var(--color-neutral-300); height: 220px; background-color: var(--color-neutral-200); box-shadow: var(--shadow-sm);">
+                  <iframe src="https://maps.google.com/maps?q=Av.+Javier+Prado+Este+5250,+Camacho,+La+Molina,+Lima&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                          width="100%" 
+                          height="100%" 
+                          style="border:0; display:block;" 
+                          allowfullscreen="" 
+                          loading="lazy" 
+                          referrerpolicy="no-referrer-when-downgrade" 
+                          title="Mapa interactivo de Av. Javier Prado Este 5250, Camacho, La Molina">
+                  </iframe>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- COLUMNA 2: Formulario de Cita Validado -->
+          <div class="contact-form-panel reveal-item">
+            <div class="panel-card panel-card--highlight">
+              <h3 class="panel-card__title">Solicitud de Cita Odontológica</h3>
+              <p class="panel-card__desc">
+                Completa tus datos para coordinar tu cita en nuestra sede de Camacho (Oficina 301).
+              </p>
+
+              <form id="formulario-contacto" class="contact-form" novalidate aria-describedby="form-disclaimer">
+                
+                <div class="form-group" id="group-nombre">
+                  <label for="nombre" class="form-label">
+                    Nombre y Apellidos <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="text" 
+                           id="nombre" 
+                           name="nombre" 
+                           class="form-input" 
+                           placeholder="Ej. Carmen Rodríguez" 
+                           required 
+                           minlength="3" 
+                           maxlength="80" 
+                           autocomplete="name" 
+                           aria-required="true"
+                           aria-describedby="error-nombre">
+                  </div>
+                  <span class="field-error-msg" id="error-nombre" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group" id="group-correo">
+                  <label for="correo" class="form-label">
+                    Correo electrónico <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="email" 
+                           id="correo" 
+                           name="correo" 
+                           class="form-input" 
+                           placeholder="nombre@ejemplo.com" 
+                           required 
+                           maxlength="100" 
+                           autocomplete="email" 
+                           aria-required="true"
+                           aria-describedby="error-correo">
+                  </div>
+                  <span class="field-error-msg" id="error-correo" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group" id="group-telefono">
+                  <label for="telefono" class="form-label">
+                    Teléfono / WhatsApp <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <input type="tel" 
+                           id="telefono" 
+                           name="telefono" 
+                           class="form-input" 
+                           placeholder="Ej. +51 995 081 111" 
+                           required
+                           maxlength="20" 
+                           autocomplete="tel"
+                           aria-required="true"
+                           aria-describedby="error-telefono">
+                  </div>
+                  <span class="field-error-msg" id="error-telefono" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group" id="group-motivo">
+                  <label for="motivo" class="form-label">
+                    Tratamiento de Interés <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <select id="motivo" name="motivo" class="form-select" required aria-required="true" aria-describedby="error-motivo">
+                      <option value="" disabled selected>Selecciona el tratamiento...</option>
+                      <option value="diseno">Diseño de Sonrisa y Carillas</option>
+                      <option value="blanqueamiento">Blanqueamiento Dental</option>
+                      <option value="ortodoncia">Ortodoncia Invisible / Brackets</option>
+                      <option value="implantes">Implantes Dentales y Cirugía</option>
+                      <option value="cerec">Coronas en 1 Solo Día (CAD/CAM CEREC)</option>
+                      <option value="limpieza">Profilaxis Dental y Periodoncia</option>
+                      <option value="dolor">Urgencia Dental / Endodoncia</option>
+                      <option value="otro">Otro tratamiento</option>
+                    </select>
+                  </div>
+                  <span class="field-error-msg" id="error-motivo" role="alert" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group" id="group-mensaje">
+                  <label for="mensaje" class="form-label">
+                    Horario de preferencia o detalle <span class="required-indicator" aria-hidden="true">*</span>
+                  </label>
+                  <div class="input-wrapper">
+                    <textarea id="mensaje" 
+                              name="mensaje" 
+                              class="form-textarea" 
+                              rows="4" 
+                              placeholder="Ejemplo: Deseo agendar para el jueves por la tarde en la sede de Camacho..." 
+                              required 
+                              minlength="10" 
+                              maxlength="1000" 
+                              aria-required="true"
+                              aria-describedby="error-mensaje char-counter"></textarea>
+                  </div>
+                  <div class="textarea-footer">
+                    <span class="field-error-msg" id="error-mensaje" role="alert" aria-live="polite"></span>
+                    <span class="char-counter" id="char-counter" aria-live="off">0 / 1000 caracteres</span>
+                  </div>
+                </div>
+
+                <p class="form-disclaimer" id="form-disclaimer">
+                  <span class="required-indicator">*</span> Datos requeridos para coordinar tu cita.
+                </p>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn--brand-purple btn--block" id="btn-submit">
+                    <span>Validar y Procesar Solicitud</span>
+                  </button>
+                </div>
+
+              </form>
+
+              <!-- Aviso sin backend conectado (cumplimiento estricto) -->
+              <div class="system-notice-card" id="notice-no-backend" role="status" aria-live="assertive" hidden>
+                <div class="system-notice-card__header">
+                  <div class="notice-badge notice-badge--info">
+                    <span>Datos de cita validados</span>
+                  </div>
+                  <button type="button" class="notice-close-btn" id="btn-cerrar-aviso" aria-label="Cerrar aviso">&times;</button>
+                </div>
+
+                <div class="system-notice-card__content">
+                  <h4 class="notice-title">Confirmación de Reserva</h4>
+                  <p class="notice-text">
+                    La información de tu cita ha sido verificada en tu navegador. Al tratarse de una maqueta front-end estática sin servidor de correo conectado, no mostramos una falsa confirmación para garantizar que tu solicitud no se pierda.
+                  </p>
+                  <p class="notice-subtext">
+                    Envía tu solicitud directamente con un clic a nuestro equipo de recepción:
+                  </p>
+
+                  <div class="validated-summary" id="validated-summary"></div>
+
+                  <div class="notice-actions">
+                    <a href="#" id="btn-enviar-whatsapp-form" class="btn btn--whatsapp btn--sm" target="_blank" rel="noopener noreferrer">
+                      <span>Enviar por WhatsApp al 995081111</span>
+                    </a>
+                    <a href="#" id="btn-enviar-mailto" class="btn btn--outline btn--sm">
+                      <span>Enviar por Correo Electrónico</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- PIE DE PÁGINA (Footer)                                    -->
+  <!-- ========================================================= -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      
+      <div class="footer-col footer-col--brand">
+        <a href="#inicio" class="site-brand site-brand--footer" aria-label="Ir al inicio de PeruDental">
+          <img src="assets/perudental-logo.png" 
+               alt="perudental" 
+               class="site-brand__img" 
+               width="180" 
+               height="34">
+        </a>
+        <p class="footer-description">
+          Av. Javier Prado Este N° 5250, Tercer Piso Oficina 301, Camacho, La Molina (C.C. La Fontana). 
+          Especialistas en odontología digital, diseño de sonrisa, ortodoncia invisible y coronas CAD/CAM 3D.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col__title">Tratamientos</h4>
+        <ul class="footer-links">
+          <li><a href="#servicios">Diseño de Sonrisa y Carillas</a></li>
+          <li><a href="#servicios">Blanqueamiento Dental</a></li>
+          <li><a href="#servicios">Ortodoncia Invisible</a></li>
+          <li><a href="#servicios">Implantes Dentales 3D</a></li>
+          <li><a href="#servicios">Coronas CAD/CAM CEREC</a></li>
+          <li><a href="#servicios">Profilaxis y Periodoncia</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col__title">Citas y Contacto</h4>
+        <ul class="footer-links">
+          <li><a href="https://api.whatsapp.com/send?phone=51995081111" target="_blank" rel="noopener noreferrer">WhatsApp: 995 081 111</a></li>
+          <li><a href="tel:+5114567890">Central: (01) 456-7890</a></li>
+          <li><a href="mailto:contacto@perudental.com">contacto@perudental.com</a></li>
+          <li><span>Piso 3 • Oficina 301 (C.C. La Fontana)</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col__title">Ética y Transparencia</h4>
+        <p class="footer-legal-notice">
+          Todo tratamiento odontológico requiere evaluación clínica previa y consentimiento informado. 
+          Atención a cargo de cirujanos dentistas colegiados y especialistas certificados.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom__inner">
+        <p>&copy; <span id="current-year">2026</span> PeruDental. Todos los derechos reservados.</p>
+        <p class="footer-built">Av. Javier Prado Este 5250, Camacho, La Molina • HTML5, CSS3 y JS Puro.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón Volver Arriba Accesible -->
+  <button type="button" 
+          class="back-to-top" 
+          id="btn-back-to-top" 
+          aria-label="Volver al inicio de la página" 
+          hidden>
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Script Principal -->
+  <script src="script.js"></script>
+</body>
+</html>

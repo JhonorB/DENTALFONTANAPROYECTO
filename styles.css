@@ -1,0 +1,1719 @@
+/* ==========================================================================
+   PERUDENTAL - HOJA DE ESTILOS PRINCIPAL
+   Tecnología: CSS3 Puro (Sin frameworks)
+   Diseño: Odontología Avanzada, Especialistas en Diseño de Sonrisas
+   Adaptabilidad: Réplica exacta del layout móvil de referencia
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES CSS (Custom Properties) - Paleta y Sistema de Diseño
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta Oficial PeruDental */
+  --color-brand-purple:       #452B50; /* Ciruela Oscuro / Aubergine del Header */
+  --color-brand-purple-dark:  #341d3d;
+  --color-brand-purple-light: #593967;
+  --color-brand-cyan:         #2EC4E5; /* Botón 1 Cyan / Sky Blue */
+  --color-brand-cyan-hover:   #1ba9ca;
+  --color-brand-green:        #00E676; /* Botón 2 Verde Brillante WhatsApp */
+  --color-brand-green-hover:  #00c853;
+  --color-brand-light-bg:     #F8F4FA;
+
+  /* Paleta Base y Neutros */
+  --color-primary-950: #1a0d21;
+  --color-primary-900: #2a1535;
+  --color-primary-800: #452B50;
+  --color-neutral-900: #000000;
+  --color-neutral-800: #171717;
+  --color-neutral-700: #333333;
+  --color-neutral-600: #555555;
+  --color-neutral-500: #777777;
+  --color-neutral-300: #dcdcdc;
+  --color-neutral-200: #ececec;
+  --color-neutral-100: #f5f5f7;
+  --color-neutral-50:  #fafafa;
+  --color-white:       #ffffff;
+
+  /* Estados */
+  --color-error:   #dc2626;
+  --color-success: #15803d;
+
+  /* Tipografía */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Sombras */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 30px rgba(0, 0, 0, 0.15);
+
+  /* Radios */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Transiciones */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --container-max-width: 1220px;
+  --header-height: 72px;
+  --topbar-height: 40px;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET Y ESTILOS BASE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-neutral-800);
+  background-color: var(--color-white);
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 12px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: var(--color-white);
+  color: var(--color-neutral-800);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background-color: var(--color-brand-cyan);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  z-index: 10000;
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 15px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand-cyan);
+  outline-offset: 3px;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.not-italic {
+  font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   3. ESTRUCTURA Y CLASES UTILITARIAS
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-accent {
+  color: var(--color-brand-purple);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+}
+
+.badge--primary {
+  background-color: var(--color-brand-light-bg);
+  color: var(--color-brand-purple);
+  border: 1px solid rgba(69, 43, 80, 0.15);
+}
+
+/* Botones Estándar */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+.btn--sm {
+  padding: 0.5rem 1.2rem;
+  font-size: 0.875rem;
+}
+
+.btn--primary {
+  background-color: var(--color-brand-purple);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(69, 43, 80, 0.25);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-brand-purple-dark);
+  transform: translateY(-2px);
+}
+
+.btn--secondary {
+  background-color: #fff;
+  color: var(--color-brand-purple);
+  border: 1.5px solid var(--color-brand-purple);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-brand-light-bg);
+  transform: translateY(-2px);
+}
+
+.btn--brand-green {
+  background-color: var(--color-brand-green);
+  color: #000;
+  font-weight: 700;
+}
+
+.btn--brand-green:hover {
+  background-color: var(--color-brand-green-hover);
+  color: #fff;
+}
+
+.btn--brand-purple {
+  background-color: var(--color-brand-purple);
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn--brand-purple:hover {
+  background-color: var(--color-brand-purple-dark);
+}
+
+.btn--whatsapp {
+  background-color: #25D366;
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn--whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+.btn--outline {
+  border: 1.5px solid var(--color-brand-purple);
+  color: var(--color-brand-purple);
+  background: transparent;
+}
+
+.btn--outline:hover {
+  background: var(--color-brand-light-bg);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   4. BARRA DE INFORMACIÓN SUPERIOR (Top Bar Desktop)
+   -------------------------------------------------------------------------- */
+.top-bar {
+  background-color: var(--color-brand-purple-dark);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.8125rem;
+  min-height: var(--topbar-height);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.top-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+.top-bar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-bar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.top-bar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--transition-fast);
+}
+
+.top-bar__link:hover {
+  color: var(--color-brand-cyan);
+}
+
+.top-bar__link--whatsapp {
+  color: #69f0ae;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .top-bar {
+    display: none; /* En móvil se oculta para dar protagonismo a la cabecera exacta de la referencia */
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. NAVEGACIÓN PRINCIPAL (Header - Fiel a la captura en Móvil)
+   Color Ciruela Oscuro (#452B50), logo en blanco, bandera UK y menú
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-brand-purple); /* Ciruela Oscuro exacto de PeruDental */
+  height: var(--header-height);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: box-shadow var(--transition-base);
+}
+
+.site-header--scrolled {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Logo perudental */
+.site-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-brand__img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+/* Grupo de la derecha (Bandera + Menú) */
+.header-right-group {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Selector de bandera UK */
+.header-lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.header-lang-btn:hover {
+  transform: scale(1.1);
+}
+
+.header-lang-flag {
+  width: 22px;
+  height: 15px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
+/* Menú Desktop */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link--active {
+  color: #fff;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Botón Hamburguesa Móvil (3 barras blancas como en captura) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.5px;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.nav-toggle__bar {
+  width: 22px;
+  height: 2.2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__bar:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Backdrop */
+.nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(25, 12, 32, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.nav-backdrop.is-visible {
+  display: block;
+  opacity: 1;
+}
+
+/* Adaptación Responsive de la Cabecera */
+@media (max-width: 960px) {
+  .site-header {
+    height: 58px;
+  }
+
+  .site-brand__img {
+    height: 26px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 58px;
+    right: 0;
+    bottom: 0;
+    width: min(310px, 85vw);
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform var(--transition-slow);
+    z-index: 999;
+    overflow-y: auto;
+  }
+
+  .site-nav.is-open {
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+  }
+
+  .nav-link {
+    color: var(--color-neutral-800);
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .nav-link:hover,
+  .nav-link--active {
+    color: var(--color-brand-purple);
+    background-color: var(--color-brand-light-bg);
+  }
+
+  .nav-cta .btn {
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. SECCIÓN 1: HERO PRINCIPAL (Fiel a la Captura Móvil)
+   Fotografía del doctor con lupas y lámpara superior en fondo
+   Titular, enlaces subrayados, pill WhatsApp y botones [Contáctanos] [995081111]
+   -------------------------------------------------------------------------- */
+.hero-perudental {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: flex-end;
+  background-color: #f7f5f8;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+
+/* Imagen de fondo del Doctor */
+.hero-perudental__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-perudental__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Degradado para legibilidad del texto en la parte inferior */
+.hero-perudental::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 25%,
+    rgba(255, 255, 255, 0.55) 48%,
+    rgba(255, 255, 255, 0.88) 68%,
+    rgba(255, 255, 255, 0.98) 88%,
+    #ffffff 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-perudental__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: 0.5rem;
+}
+
+.hero-perudental__box {
+  max-width: 580px;
+  margin-top: auto;
+}
+
+/* Titular Principal Exacto */
+.hero-perudental__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.45rem, 4.5vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #000000;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  text-align: left;
+}
+
+/* Subtítulo con Enlaces Subrayados */
+.hero-perudental__subtitle-links {
+  font-size: clamp(0.925rem, 2.5vw, 1.125rem);
+  line-height: 1.5;
+  color: #171717;
+  margin-bottom: 1.25rem;
+}
+
+.hero-perudental__subtitle-links a {
+  color: #171717;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.hero-perudental__subtitle-links a:hover {
+  color: var(--color-brand-cyan);
+}
+
+/* Indicador flotante WhatsApp "Separa tu cita con nosotros" */
+.hero-perudental__whatsapp-callout {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.85rem;
+}
+
+.whatsapp-pill-badge {
+  display: inline-block;
+  transition: transform var(--transition-base);
+}
+
+.whatsapp-pill-badge:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.whatsapp-pill-badge__img {
+  width: auto;
+  height: 52px;
+  display: block;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+}
+
+/* Botones Paralelos [Contáctanos] y [995081111] */
+.hero-perudental__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.btn-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  flex: 1;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  user-select: none;
+  text-align: center;
+}
+
+/* Botón 1: Cyan / Sky Blue (#2EC4E5) */
+.btn-pill--cyan {
+  background-color: var(--color-brand-cyan);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(46, 196, 229, 0.35);
+}
+
+.btn-pill--cyan:hover {
+  background-color: var(--color-brand-cyan-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46, 196, 229, 0.45);
+}
+
+/* Botón 2: Verde Brillante (#00E676 / #6edb6e) */
+.btn-pill--green {
+  background-color: var(--color-brand-green);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 230, 118, 0.35);
+}
+
+.btn-pill--green:hover {
+  background-color: var(--color-brand-green-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 230, 118, 0.45);
+}
+
+/* Pestaña inferior: Gestionar consentimiento (Exacta a la captura) */
+.consent-pill-tab {
+  width: 100%;
+  max-width: 290px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff;
+  color: #111111;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.consent-pill-tab:hover {
+  background-color: #f7f7f7;
+}
+
+/* Adaptación Hero para Móvil (Fiel a la captura de referencia) */
+@media (max-width: 768px) {
+  .hero-perudental {
+    min-height: calc(100vh - 58px);
+    padding-bottom: 0;
+  }
+
+  .hero-perudental__bg-img {
+    object-position: 68% top;
+  }
+
+  .hero-perudental__container {
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
+    padding-bottom: 0;
+  }
+
+  .hero-perudental__title {
+    font-size: 1.55rem;
+    line-height: 1.25;
+    margin-bottom: 0.65rem;
+    font-weight: 800;
+  }
+
+  .hero-perudental__subtitle-links {
+    font-size: 0.925rem;
+    line-height: 1.45;
+    margin-bottom: 1rem;
+  }
+
+  .hero-perudental__whatsapp-callout {
+    margin-bottom: 0.75rem;
+  }
+
+  .whatsapp-pill-badge__img {
+    height: 48px;
+    width: auto;
+  }
+
+  .hero-perudental__actions {
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-pill {
+    padding: 0.8rem 0.5rem;
+    font-size: 1.05rem;
+  }
+
+  .consent-pill-tab {
+    max-width: 275px;
+    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. BANDA RESUMEN DE CIFRAS (Stats Strip)
+   -------------------------------------------------------------------------- */
+.stats-strip {
+  background-color: var(--color-brand-purple);
+  color: #ffffff;
+  padding: 2.25rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.stat-box {
+  padding: 0.5rem;
+}
+
+.stat-box__number {
+  display: block;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: var(--color-brand-cyan);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.stat-box__label {
+  display: block;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 0.4rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .stats-strip__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. SECCIÓN ESPECIALIDADES DENTALES (Servicios)
+   -------------------------------------------------------------------------- */
+.services-section {
+  background-color: #ffffff;
+}
+
+.section-header {
+  max-width: 720px;
+  margin: 0 auto 3rem auto;
+}
+
+.section-title {
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-neutral-900);
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-neutral-600);
+  line-height: 1.6;
+}
+
+/* Filtros */
+.services-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.75rem;
+}
+
+.filter-btn {
+  padding: 0.55rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  color: var(--color-neutral-700);
+  border: 1px solid var(--color-neutral-300);
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  background-color: var(--color-brand-light-bg);
+  color: var(--color-brand-purple);
+  border-color: var(--color-brand-purple);
+}
+
+.filter-btn--active {
+  background-color: var(--color-brand-purple);
+  color: #fff;
+  border-color: var(--color-brand-purple);
+}
+
+.filter-btn--active:hover {
+  background-color: var(--color-brand-purple-dark);
+  color: #fff;
+}
+
+/* Grid de Tarjetas */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-brand-cyan);
+}
+
+.service-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--color-neutral-100);
+}
+
+.service-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.service-card:hover .service-card__img {
+  transform: scale(1.04);
+}
+
+.provisional-pill {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  color: var(--color-brand-purple);
+  border: 1px solid rgba(69, 43, 80, 0.2);
+  font-size: 0.725rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.service-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-card__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.category-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.category-tag--estetica      { background-color: #fef3c7; color: #b45309; }
+.category-tag--ortodoncia    { background-color: #f3e8ff; color: #7e22ce; }
+.category-tag--implantes     { background-color: #e0f2fe; color: #0369a1; }
+.category-tag--rehabilitacion{ background-color: #ccfbf1; color: #0f766e; }
+.category-tag--prevencion    { background-color: #dcfce7; color: #15803d; }
+
+.location-badge {
+  font-size: 0.775rem;
+  color: var(--color-neutral-500);
+  font-weight: 600;
+}
+
+.service-card__title {
+  font-size: 1.225rem;
+  font-weight: 800;
+  color: var(--color-neutral-900);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.service-card__text {
+  font-size: 0.925rem;
+  color: var(--color-neutral-600);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.service-card__status-box {
+  margin-top: auto;
+  padding: 0.75rem;
+  background-color: var(--color-brand-light-bg);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--color-brand-purple);
+  border: 1px dashed rgba(69, 43, 80, 0.25);
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-indicator--pending {
+  background-color: var(--color-brand-cyan);
+}
+
+.status-text {
+  line-height: 1.3;
+}
+
+.service-card__footer {
+  padding: 1rem 1.5rem;
+  background-color: var(--color-neutral-50);
+  border-top: 1px solid var(--color-neutral-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.825rem;
+}
+
+.service-card__detail {
+  color: var(--color-neutral-500);
+  font-weight: 500;
+}
+
+.service-card__link {
+  color: var(--color-brand-purple);
+  font-weight: 700;
+  transition: color var(--transition-fast);
+}
+
+.service-card__link:hover {
+  color: var(--color-brand-cyan);
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. SECCIÓN SEDE LA FONTANA (Conservación de Proporciones del Edificio)
+   -------------------------------------------------------------------------- */
+.sedes-section {
+  background-color: var(--color-brand-light-bg);
+  border-top: 1px solid var(--color-neutral-200);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.sede-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.sede-address-highlight {
+  font-size: 1.15rem;
+  color: var(--color-brand-purple);
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.sede-desc {
+  font-size: 1rem;
+  color: var(--color-neutral-700);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.sede-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.sede-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--color-neutral-800);
+}
+
+.sede-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-showcase {
+  width: 100%;
+  max-width: 580px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-xl);
+  padding: 0.85rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-showcase__frame {
+  position: relative;
+  width: 100%;
+  background-color: #000;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-showcase__img {
+  width: 100%;
+  height: auto;
+  max-height: 440px;
+  aspect-ratio: 16 / 10;
+  object-fit: contain; /* Conserva íntegramente las proporciones del edificio */
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
+.hero-showcase__overlay-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background-color: rgba(69, 43, 80, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.775rem;
+  font-weight: 600;
+}
+
+.hero-showcase__caption {
+  padding: 0.85rem 0.5rem 0.25rem 0.5rem;
+}
+
+.caption-content strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-brand-purple);
+}
+
+.caption-content p {
+  font-size: 0.825rem;
+  color: var(--color-neutral-600);
+}
+
+@media (max-width: 960px) {
+  .sede-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Modal de Fotografía Completa */
+.photo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.photo-modal[hidden] {
+  display: none;
+}
+
+.photo-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(25, 12, 32, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.photo-modal__container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  background-color: #fff;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
+.photo-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.photo-modal__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-brand-purple);
+}
+
+.photo-modal__close {
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--color-neutral-500);
+}
+
+.photo-modal__body {
+  padding: 1rem;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-modal__img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.photo-modal__footer {
+  padding: 0.85rem 1.5rem;
+  background-color: var(--color-neutral-50);
+  font-size: 0.825rem;
+  color: var(--color-neutral-600);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   10. SECCIÓN CITAS, CONTACTO Y FORMULARIO
+   -------------------------------------------------------------------------- */
+.contact-section {
+  background-color: #ffffff;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.panel-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.panel-card--highlight {
+  border-color: var(--color-neutral-300);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-neutral-50);
+}
+
+.panel-card__title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--color-brand-purple);
+  margin-bottom: 0.5rem;
+}
+
+.panel-card__desc {
+  font-size: 0.95rem;
+  color: var(--color-neutral-600);
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.contact-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-brand-light-bg);
+  color: var(--color-brand-purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-neutral-500);
+  margin-bottom: 0.2rem;
+}
+
+.contact-value,
+.contact-link {
+  font-size: 0.95rem;
+  color: var(--color-neutral-800);
+  line-height: 1.5;
+}
+
+.contact-link {
+  color: var(--color-brand-purple);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.schedule-list {
+  font-size: 0.875rem;
+  color: var(--color-neutral-700);
+  line-height: 1.6;
+}
+
+.whatsapp-cta-box--brand {
+  background: linear-gradient(135deg, #128c7e 0%, #075e54 100%);
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.whatsapp-cta-box__icon {
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.whatsapp-cta-box__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.whatsapp-cta-box__title {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.whatsapp-cta-box__desc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 1rem;
+}
+
+/* Formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-neutral-800);
+  margin-bottom: 0.4rem;
+}
+
+.required-indicator {
+  color: var(--color-error);
+  font-weight: 700;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-brand-cyan);
+  box-shadow: 0 0 0 3px rgba(46, 196, 229, 0.2);
+  outline: none;
+}
+
+.form-input.is-invalid,
+.form-select.is-invalid,
+.form-textarea.is-invalid {
+  border-color: var(--color-error);
+  background-color: #fffaf9;
+}
+
+.field-error-msg {
+  font-size: 0.8rem;
+  color: var(--color-error);
+  font-weight: 500;
+  margin-top: 0.35rem;
+  min-height: 1.1rem;
+}
+
+.textarea-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.char-counter {
+  font-size: 0.75rem;
+  color: var(--color-neutral-500);
+  margin-left: auto;
+}
+
+.form-disclaimer {
+  font-size: 0.8rem;
+  color: var(--color-neutral-500);
+}
+
+/* Aviso Sin Backend */
+.system-notice-card {
+  margin-top: 1.5rem;
+  background-color: var(--color-white);
+  border: 1.5px solid var(--color-brand-cyan);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.system-notice-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.notice-badge {
+  display: inline-flex;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.notice-close-btn {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--color-neutral-500);
+}
+
+.notice-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-brand-purple);
+  margin-bottom: 0.5rem;
+}
+
+.notice-text {
+  font-size: 0.9rem;
+  color: var(--color-neutral-700);
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
+}
+
+.notice-subtext {
+  font-size: 0.85rem;
+  color: var(--color-neutral-600);
+  margin-bottom: 1rem;
+}
+
+.validated-summary {
+  background-color: var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--color-neutral-800);
+}
+
+.notice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 960px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. PIE DE PÁGINA (Footer)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-brand-purple-dark);
+  color: rgba(255, 255, 255, 0.8);
+  padding-top: 4.5rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer__inner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
+  gap: 2.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.footer-description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 320px;
+}
+
+.footer-col__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-size: 0.875rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-brand-cyan);
+}
+
+.footer-legal-notice {
+  font-size: 0.825rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 0;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-bottom__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 960px) {
+  .site-footer__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .site-footer__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Botón Volver Arriba */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-brand-purple);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  z-index: 900;
+  transition: all var(--transition-base);
+}
+
+.back-to-top:hover {
+  background-color: var(--color-brand-cyan);
+  transform: translateY(-3px);
+}
+
+.back-to-top[hidden] {
+  display: none;
+}
+
+/* Animaciones */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-item.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
